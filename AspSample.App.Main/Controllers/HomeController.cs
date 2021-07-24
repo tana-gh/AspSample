@@ -11,11 +11,11 @@ namespace AspSample.App.Main.Controllers
     [Route("api/home")]
     public class HomeController : ControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
+        private ILogger<HomeController> Logger { get; }
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+            Logger = logger;
         }
 
         [Route("hello")]

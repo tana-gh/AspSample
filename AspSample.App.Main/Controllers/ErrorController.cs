@@ -11,11 +11,11 @@ namespace AspSample.App.Main.Controllers
     [Route("api/error")]
     public class ErrorController : ControllerBase
     {
-        private readonly ILogger<ErrorController> _logger;
+        private ILogger<ErrorController> Logger { get; }
 
         public ErrorController(ILogger<ErrorController> logger)
         {
-            _logger = logger;
+            Logger = logger;
         }
 
         [Route("error")]
