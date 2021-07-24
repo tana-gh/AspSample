@@ -1,0 +1,9 @@
+[submodule "config"]
+	path = config
+	url = git@github.com:tana-gh/node-config-template.git
+[submodule "assets/favicon"]
+	path = assets/favicon
+	url = git@github.com:tana-gh/favicon.git
+[submodule "assets/font"]
+	path = assets/font
+	url = git@github.com:tana-gh/font-template.git
