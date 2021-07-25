@@ -63,13 +63,13 @@ namespace AspSample.App.Main
                 {
                     policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
                     policy.RequireAuthenticatedUser();
-                    policy.RequireRole("Normal");
+                    policy.RequireRole("Admin", "Normal");
                 });
                 options.AddPolicy("Anonymous", policy =>
                 {
                     policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
                     policy.RequireAuthenticatedUser();
-                    policy.RequireRole("Anonymous");
+                    policy.RequireRole("Admin", "Normal", "Anonymous");
                 });
             });
         }

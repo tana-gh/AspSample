@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace AspSample.App.Main.Controllers
 {
     [ApiController]
     [Route("api/home")]
+    [Authorize("Anonymous")]
     public class HomeController : ControllerBase
     {
         private ILogger<HomeController> Logger { get; }
