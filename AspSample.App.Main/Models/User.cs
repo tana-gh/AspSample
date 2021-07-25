@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AspSample.App.Main.Models
 {
-    public class User : IdentityUser<int>
+    public class User : IdentityUser
     {
         List<Post> Posts { get; set; }
     }

@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AspSample.App.Main.Models;
 
 namespace AspSample.App.Main
 {
@@ -22,13 +23,16 @@ namespace AspSample.App.Main
         {
             services.AddControllersWithViews();
             services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+                configuration.RootPath = "ClientApp/dist"
+            );
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite()
             );
+
+            services
+                .AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

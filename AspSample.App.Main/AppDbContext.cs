@@ -1,14 +1,13 @@
-using System;
 using System.Data.SQLite;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using AspSample.App.Main.Models;
 
 namespace AspSample.App.Main
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
-        public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
 
         private IConfiguration Configuration { get; }
