@@ -1,14 +1,15 @@
-module Main exposing (main)
+port module Main exposing (main)
 
 import Browser
 import Browser.Navigation as Nav
-import Html               exposing (Html, article, button, div, h1, h2, header, input, main_, section, text)
-import Html.Attributes    exposing (value)
+import Html               exposing (Html, article, button, div, h1, h2, header, input, main_, node, section, text)
+import Html.Attributes    exposing (id, value)
 import Html.Events        exposing (onClick, onInput)
 import Html.Lazy          exposing (lazy)
 import Http
 import Json.Decode
 import Json.Encode
+import Jwt.Http
 import String.Format      as Format
 import Url
 import Url.Parser         exposing (Parser, (</>), map, oneOf, parse, s, string, top)
@@ -26,6 +27,8 @@ main = Browser.application
 type alias Model =
     { key       : Nav.Key
     , route     : Route
+    , idToken   : Maybe String
+    , critical  : Maybe String
     , loading   : Bool
     , name      : String
     , helloText : String
@@ -45,10 +48,15 @@ type Msg
     | SetName      String
     | SendHello    String
     | ReceiveHello String
+    | Auth         String
+    | Critical     String
+
+port authPort : (String -> msg) -> Sub msg
+port errorPort : (String -> msg) -> Sub msg
 
 init : () -> Url.Url -> Nav.Key -> (Model, Cmd Msg)
 init _ url key =
-    (Model key (toRoute url) False "world" (helloString "world"), Cmd.none)
+    (Model key (toRoute url) Nothing Nothing False "world" (helloString "world"), Cmd.none)
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
@@ -75,9 +83,15 @@ update msg model =
         SetName name ->
             ({ model | name = name }, Cmd.none)
         SendHello name ->
-            (model, sendHello name)
+            (model, sendHello model name)
         ReceiveHello hello ->
             ({ model | helloText = hello }, Cmd.none)
+        Auth idToken ->
+            case idToken of
+                "" -> ({ model | idToken = Nothing }, Cmd.none)
+                _ -> ({ model | idToken = Just idToken }, Cmd.none)
+        Critical error ->
+            ({ model | critical = Just error }, Cmd.none)
 
 toRoute : Url.Url -> Route
 toRoute url =
@@ -93,13 +107,17 @@ routeParser =
         , map HelloPage <| s "hello" </> string
         ]
 
-sendHello : String -> Cmd Msg
-sendHello name =
-    Http.post
-        { url = "/api/home/hello"
-        , body = Http.jsonBody <| nameEncoder name
-        , expect = Http.expectJson receiveHello helloDecoder
-        }
+sendHello : Model -> String -> Cmd Msg
+sendHello model name =
+    case model.idToken of
+        Just idToken ->
+            Jwt.Http.post idToken
+                { url = "/api/home/hello"
+                , body = Http.jsonBody <| nameEncoder name
+                , expect = Http.expectJson receiveHello helloDecoder
+                }
+        Nothing ->
+            Cmd.none
 
 nameEncoder : String -> Json.Encode.Value
 nameEncoder name = Json.Encode.object [("name", Json.Encode.string name)]
@@ -114,7 +132,10 @@ receiveHello result =
         Err _ -> None
 
 subscriptions : Model -> Sub Msg
-subscriptions _ = Sub.none
+subscriptions _ =
+    Sub.batch
+        [ authPort Auth
+        ]
 
 view : Model -> Browser.Document Msg
 view model =
@@ -131,12 +152,35 @@ view model =
             ]
         , main_ []
             [
+                if model.critical /= Nothing
+                then lazy viewCritical model
+                else
                 if model.loading
                 then lazy text "Loading..."
+                else
+                if model.idToken == Nothing
+                then lazy viewFirebaseui model
                 else lazy viewRoute model
             ]
         ]
     }
+
+viewCritical : Model -> Html Msg
+viewCritical model =
+    div []
+        [ case model.critical of
+            Just critical ->
+                text critical
+            Nothing ->
+                text ""
+        ]
+
+viewFirebaseui : Model -> Html Msg
+viewFirebaseui _ =
+    div []
+        [ div [ id "firebaseui-auth-container" ] []
+        , node "attach-firebaseui-auth" [] []
+        ]
 
 viewRoute : Model -> Html Msg
 viewRoute model =

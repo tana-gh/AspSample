@@ -11,6 +11,11 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │     ├─ URL: https://github.com/digitalbazaar/forge
 │     ├─ VendorName: Digital Bazaar, Inc.
 │     └─ VendorUrl: https://github.com/digitalbazaar/forge
+├─ (MIT or Apache-2.0)
+│  └─ dom-storage@2.1.0
+│     ├─ URL: git://git.coolaj86.com/coolaj86/dom-storage.js.git
+│     ├─ VendorName: AJ ONeal
+│     └─ VendorUrl: https://git.coolaj86.com/coolaj86/dom-storage.js
 ├─ (MIT OR Apache-2.0)
 │  └─ atob@2.1.2
 │     ├─ URL: git://git.coolaj86.com/coolaj86/atob.js.git
@@ -40,6 +45,138 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │     ├─ VendorName: Microsoft Corp.
 │     └─ VendorUrl: https://www.typescriptlang.org/
 ├─ Apache-2.0
+│  ├─ @firebase/analytics-types@0.5.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/analytics@0.6.15
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/app-check-interop-types@0.1.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/app-check-types@0.2.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/app-check@0.2.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/app-types@0.6.2
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/app@0.6.28
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/auth-interop-types@0.1.6
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/auth-types@0.10.3
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/auth@0.16.8
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/component@0.5.4
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/database-types@0.7.2
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/database@0.10.8
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/firestore-types@2.3.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/firestore@2.3.9
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/functions-types@0.4.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/functions@0.6.13
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/installations-types@0.3.4
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/installations@0.4.30
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/logger@0.2.6
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/messaging-types@0.5.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/messaging@0.7.14
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/performance-types@0.0.13
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/performance@0.4.16
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/polyfill@0.3.36
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/remote-config-types@0.1.9
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/remote-config@0.1.41
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/storage-types@0.4.1
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/storage@0.6.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/util@1.1.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @firebase/webchannel-wrapper@0.5.1
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ @grpc/grpc-js@1.3.6
+│  │  ├─ URL: https://github.com/grpc/grpc-node/tree/master/packages/grpc-js
+│  │  ├─ VendorName: Google Inc.
+│  │  └─ VendorUrl: https://grpc.io/
+│  ├─ @grpc/proto-loader@0.6.4
+│  │  ├─ URL: https://github.com/grpc/grpc-node.git
+│  │  ├─ VendorName: Google Inc.
+│  │  └─ VendorUrl: https://grpc.io/
 │  ├─ @humanwhocodes/config-array@0.5.0
 │  │  ├─ URL: git+https://github.com/humanwhocodes/config-array.git
 │  │  ├─ VendorName: Nicholas C. Zakas
@@ -86,6 +223,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: https://github.com/eslint/eslint-visitor-keys.git
 │  │  ├─ VendorName: Toru Nagashima
 │  │  └─ VendorUrl: https://github.com/eslint/eslint-visitor-keys#readme
+│  ├─ faye-websocket@0.11.3
+│  │  ├─ URL: git://github.com/faye/faye-websocket-node.git
+│  │  ├─ VendorName: James Coglan
+│  │  └─ VendorUrl: https://github.com/faye/faye-websocket-node
 │  ├─ faye-websocket@0.11.4
 │  │  ├─ URL: git://github.com/faye/faye-websocket-node.git
 │  │  ├─ VendorName: James Coglan
@@ -94,6 +235,13 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: git@github.com:facebook/watchman.git
 │  │  ├─ VendorName: Wez Furlong
 │  │  └─ VendorUrl: https://facebook.github.io/watchman/
+│  ├─ firebase@8.8.0
+│  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
+│  │  ├─ VendorName: Firebase
+│  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ firebaseui@4.8.1
+│  │  ├─ URL: https://github.com/firebase/firebaseui-web.git
+│  │  └─ VendorName: Google
 │  ├─ forever-agent@0.6.1
 │  │  ├─ URL: https://github.com/mikeal/forever-agent
 │  │  ├─ VendorName: Mikeal Rogers
@@ -102,6 +250,12 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: https://github.com/ehmicky/human-signals.git
 │  │  ├─ VendorName: ehmicky
 │  │  └─ VendorUrl: https://git.io/JeluP
+│  ├─ long@4.0.0
+│  │  ├─ URL: https://github.com/dcodeIO/long.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ material-design-lite@1.3.0
+│  │  ├─ URL: https://github.com/google/material-design-lite.git
+│  │  └─ VendorName: Google
 │  ├─ oauth-sign@0.9.0
 │  │  ├─ URL: https://github.com/mikeal/oauth-sign
 │  │  ├─ VendorName: Mikeal Rogers
@@ -228,6 +382,36 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: git+https://github.com/humanwhocodes/object-schema.git
 │  │  ├─ VendorName: Nicholas C. Zakas
 │  │  └─ VendorUrl: https://github.com/humanwhocodes/object-schema#readme
+│  ├─ @protobufjs/aspromise@1.1.2
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/base64@1.1.2
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/codegen@2.0.4
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/eventemitter@1.1.0
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/fetch@1.1.0
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/float@1.0.2
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/inquire@1.1.0
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/path@1.1.2
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/pool@1.1.0
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
+│  ├─ @protobufjs/utf8@1.1.0
+│  │  ├─ URL: https://github.com/dcodeIO/protobuf.js.git
+│  │  └─ VendorName: Daniel Wirtz
 │  ├─ @sinonjs/commons@1.8.3
 │  │  ├─ URL: git+https://github.com/sinonjs/commons.git
 │  │  └─ VendorUrl: https://github.com/sinonjs/commons#readme
@@ -249,6 +433,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  └─ VendorUrl: https://github.com/istanbuljs/babel-plugin-istanbul#readme
 │  ├─ bcrypt-pbkdf@1.0.2
 │  │  └─ URL: git://github.com/joyent/node-bcrypt-pbkdf.git
+│  ├─ dialog-polyfill@0.4.10
+│  │  ├─ URL: https://github.com/GoogleChrome/dialog-polyfill.git
+│  │  ├─ VendorName: The Chromium Authors
+│  │  └─ VendorUrl: https://github.com/GoogleChrome/dialog-polyfill
 │  ├─ elm-webpack-loader@8.0.0
 │  │  ├─ URL: https://github.com/elm-community/elm-webpack-loader.git
 │  │  ├─ VendorName: elm-community
@@ -292,6 +480,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: https://github.com/rtfeldman/node-elm-compiler.git
 │  │  ├─ VendorName: Richard Feldman
 │  │  └─ VendorUrl: https://github.com/rtfeldman/node-elm-compiler
+│  ├─ protobufjs@6.11.2
+│  │  ├─ URL: https://github.com/protobufjs/protobuf.js.git
+│  │  ├─ VendorName: Daniel Wirtz
+│  │  └─ VendorUrl: https://protobufjs.github.io/protobuf.js/
 │  ├─ qs@6.5.2
 │  │  ├─ URL: https://github.com/ljharb/qs.git
 │  │  └─ VendorUrl: https://github.com/ljharb/qs
@@ -447,6 +639,9 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: git+https://github.com/css-modules/icss-utils.git
 │  │  ├─ VendorName: Glen Maddern
 │  │  └─ VendorUrl: https://github.com/css-modules/icss-utils#readme
+│  ├─ idb@3.0.2
+│  │  ├─ URL: git://github.com/jakearchibald/indexeddb-promised.git
+│  │  └─ VendorName: Jake Archibald
 │  ├─ inflight@1.0.6
 │  │  ├─ URL: https://github.com/npm/inflight.git
 │  │  ├─ VendorName: Isaac Z. Schlueter
@@ -1081,10 +1276,15 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  ├─ @types/json-schema@7.0.8
 │  │  ├─ URL: https://github.com/DefinitelyTyped/DefinitelyTyped.git
 │  │  └─ VendorUrl: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-schema
+│  ├─ @types/long@4.0.1
+│  │  └─ URL: https://github.com/DefinitelyTyped/DefinitelyTyped.git
 │  ├─ @types/minimatch@3.0.5
 │  │  ├─ URL: https://github.com/DefinitelyTyped/DefinitelyTyped.git
 │  │  └─ VendorUrl: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/minimatch
 │  ├─ @types/node@16.4.0
+│  │  ├─ URL: https://github.com/DefinitelyTyped/DefinitelyTyped.git
+│  │  └─ VendorUrl: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node
+│  ├─ @types/node@16.4.2
 │  │  ├─ URL: https://github.com/DefinitelyTyped/DefinitelyTyped.git
 │  │  └─ VendorUrl: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node
 │  ├─ @types/parse-json@4.0.0
@@ -1564,6 +1764,8 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  ├─ core-js-compat@3.15.2
 │  │  └─ URL: https://github.com/zloirock/core-js.git
 │  ├─ core-js-pure@3.15.2
+│  │  └─ URL: https://github.com/zloirock/core-js.git
+│  ├─ core-js@3.6.5
 │  │  └─ URL: https://github.com/zloirock/core-js.git
 │  ├─ core-util-is@1.0.2
 │  │  ├─ URL: git://github.com/isaacs/core-util-is
@@ -2599,6 +2801,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: https://github.com/sindresorhus/locate-path.git
 │  │  ├─ VendorName: Sindre Sorhus
 │  │  └─ VendorUrl: sindresorhus.com
+│  ├─ lodash.camelcase@4.3.0
+│  │  ├─ URL: https://github.com/lodash/lodash.git
+│  │  ├─ VendorName: John-David Dalton
+│  │  └─ VendorUrl: https://lodash.com/
 │  ├─ lodash.clonedeep@4.5.0
 │  │  ├─ URL: https://github.com/lodash/lodash.git
 │  │  ├─ VendorName: John-David Dalton
@@ -2749,6 +2955,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: git://github.com/blakeembrey/change-case.git
 │  │  ├─ VendorName: Blake Embrey
 │  │  └─ VendorUrl: https://github.com/blakeembrey/change-case/tree/master/packages/no-case#readme
+│  ├─ node-fetch@2.6.1
+│  │  ├─ URL: https://github.com/bitinn/node-fetch.git
+│  │  ├─ VendorName: David Frank
+│  │  └─ VendorUrl: https://github.com/bitinn/node-fetch
 │  ├─ node-int64@0.4.0
 │  │  ├─ URL: https://github.com/broofa/node-int64
 │  │  └─ VendorName: Robert Kieffer
@@ -3136,6 +3346,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  ├─ progress@2.0.3
 │  │  ├─ URL: git://github.com/visionmedia/node-progress
 │  │  └─ VendorName: TJ Holowaychuk
+│  ├─ promise-polyfill@8.1.3
+│  │  ├─ URL: https://github.com/taylorhakes/promise-polyfill.git
+│  │  ├─ VendorName: Taylor Hakes
+│  │  └─ VendorUrl: https://github.com/taylorhakes/promise-polyfill
 │  ├─ prompts@2.4.1
 │  │  ├─ URL: https://github.com/terkelg/prompts.git
 │  │  ├─ VendorName: Terkel Gjervig
@@ -3766,6 +3980,8 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: https://github.com/jsdom/whatwg-encoding.git
 │  │  ├─ VendorName: Domenic Denicola
 │  │  └─ VendorUrl: https://domenic.me/
+│  ├─ whatwg-fetch@2.0.4
+│  │  └─ URL: https://github.com/github/fetch.git
 │  ├─ whatwg-mimetype@2.3.0
 │  │  ├─ URL: https://github.com/jsdom/whatwg-mimetype.git
 │  │  ├─ VendorName: Domenic Denicola
@@ -3803,6 +4019,10 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  ├─ xmlchars@2.2.0
 │  │  ├─ URL: https://github.com/lddubeau/xmlchars.git
 │  │  └─ VendorName: Louis-Dominique Dubeau
+│  ├─ xmlhttprequest@1.8.0
+│  │  ├─ URL: git://github.com/driverdan/node-XMLHttpRequest.git
+│  │  ├─ VendorName: Dan DeFelippi
+│  │  └─ VendorUrl: http://driverdan.com
 │  ├─ yargs@13.3.2
 │  │  ├─ URL: https://github.com/yargs/yargs.git
 │  │  └─ VendorUrl: https://yargs.js.org/

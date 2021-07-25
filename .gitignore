@@ -16,3 +16,6 @@ wwwroot/node_modules/
 launchSettings.json
 appsettings*.json
 data/
+
+**/key/*
+!**/key/example*
