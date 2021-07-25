@@ -8,5 +8,10 @@
   },
   
   "SQLiteDataSource": "./data/Development.sqlite3",
+  "Authority": "https://securetoken.google.com/web-sample-tana",
+  "Issuer": "https://securetoken.google.com/web-sample-tana",
+  "Audience": "web-sample-tana",
+  "ClientSourcePath": "ClientApp",
+  "ClientRootPath": "ClientApp/dist",
   "DevServerUri": "http://localhost:8080"
 }

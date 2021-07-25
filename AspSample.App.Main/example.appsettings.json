@@ -8,5 +8,10 @@
     },
   "AllowedHosts": "*",
   
-  "SQLiteDataSource": "./data/Production.sqlite3"
+  "SQLiteDataSource": "./data/Production.sqlite3",
+  "Authority": "https://securetoken.google.com/web-sample-tana",
+  "Issuer": "https://securetoken.google.com/web-sample-tana",
+  "Audience": "web-sample-tana",
+  "ClientSourcePath": "ClientApp",
+  "ClientRootPath": "ClientApp/dist"
 }
