@@ -19,3 +19,5 @@ data/
 
 **/key/*
 !**/key/example*
+
+dist/
