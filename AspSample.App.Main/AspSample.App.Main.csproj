@@ -19,6 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.Sqlite.Core" Version="1.0.114.3" />
   </ItemGroup>
 
@@ -27,6 +28,15 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+
+    <None Include="data\**" CopyToPublishDirectory="Always" />
+    <None Include="key\**" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ContentWithTargetPath Include="data\Development.sqlite3" CopyToOutputDirectory="PreserveNewest" TargetPath="data\Development.sqlite3" Condition="Exists('data\Development.sqlite3')" />
+    <ContentWithTargetPath Include="data\Production.sqlite3" CopyToOutputDirectory="PreserveNewest" TargetPath="data\Production.sqlite3" Condition="Exists('data\Production.sqlite3')" />
+    <ContentWithTargetPath Include="key\firebase.json" CopyToOutputDirectory="PreserveNewest" TargetPath="key\firebase.json" Condition="Exists('key\firebase.json')" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
