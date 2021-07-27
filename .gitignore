@@ -21,3 +21,5 @@ data/
 !**/key/example*
 
 dist/
+
+envsetting.txt

@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using AspSample.App.Main.Models;
 
 namespace AspSample.App.Main
@@ -23,7 +23,7 @@ namespace AspSample.App.Main
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllers();
             services.AddSpaStaticFiles(configuration =>
                 configuration.RootPath = Configuration["ClientRootPath"]
             );
@@ -34,43 +34,38 @@ namespace AspSample.App.Main
 
             services
                 .AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>();
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
 
             services
-                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
+                .AddAuthentication(options =>
                 {
-                    options.Authority = Configuration["Authority"];
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuer = true,
-                        ValidIssuer = Configuration["Issuer"],
-                        ValidateAudience = true,
-                        ValidAudience = Configuration["Audience"],
-                        ValidateLifetime = true
-                    };
-                });
+                    options.DefaultScheme = "Firebase";
+                    options.DefaultAuthenticateScheme = "Firebase";
+                    options.DefaultChallengeScheme = "Firebase";
+                })
+                .AddScheme<FirebaseAuthenticationSchemeOptions, FirebaseAuthenticationHandler>("Firebase", options => {});
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", policy =>
-                {
-                    policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireRole("Admin");
-                });
-                options.AddPolicy("Normal", policy =>
-                {
-                    policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireRole("Admin", "Normal");
-                });
-                options.AddPolicy("Anonymous", policy =>
-                {
-                    policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireRole("Admin", "Normal", "Anonymous");
-                });
+                // options.AddPolicy("Admin", policy =>
+                // {
+                //     policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
+                //     policy.RequireAuthenticatedUser();
+                //     policy.RequireRole("Admin");
+                // });
+                // options.AddPolicy("Normal", policy =>
+                // {
+                //     policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
+                //     policy.RequireAuthenticatedUser();
+                //     policy.RequireRole("Admin", "Normal");
+                // });
+                // options.AddPolicy("Anonymous", policy =>
+                // {
+                //     policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
+                //     policy.RequireAuthenticatedUser();
+                //     policy.RequireRole("Admin", "Normal", "Anonymous");
+                // });
             });
         }
 

@@ -1,7 +1,7 @@
 import { Elm } from './elm/Main.elm'
 import firebase from 'firebase'
-import * as firebaseui from 'firebaseui'
-import 'firebaseui/dist/firebaseui.css'
+import * as firebaseui from 'firebaseui-ja'
+import 'firebaseui-ja/dist/firebaseui.css'
 import '../assets/scss/style.scss'
 
 fetch(new Request('/api/key/firebase'), {
@@ -14,6 +14,21 @@ fetch(new Request('/api/key/firebase'), {
 .then(json => {
     firebase.initializeApp(json)
     firebase.analytics()
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            user.getIdToken(true)
+                .then(idToken => {
+                    app.ports.authPort.send(idToken)
+                })
+                .catch(() => {
+                    app.ports.errorPort.send('ID token is not available')
+                })
+        }
+        else {
+            app.ports.authPort.send('')
+        }
+    })
 
     class AttachFirebaseuiAuth extends HTMLElement {
         constructor() {
@@ -44,14 +59,7 @@ fetch(new Request('/api/key/firebase'), {
                     privacyPolicyUrl: '',
                     callbacks: {
                         signInSuccessWithAuthResult: () => {
-                            firebase.auth().currentUser.getIdToken(true)
-                                .then(idToken => {
-                                    app.ports.authPort.send(idToken)
-                                })
-                                .catch(() => {
-                                    app.ports.errorPort.send('ID token not available')
-                                })
-                            return false;
+                            return false
                         }
                     }
                 })

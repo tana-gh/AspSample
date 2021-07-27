@@ -7,9 +7,11 @@
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <UserSecretsId>web-sample-tana</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FirebaseAdmin" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.8" />
@@ -37,6 +39,7 @@
     <ContentWithTargetPath Include="data\Development.sqlite3" CopyToOutputDirectory="PreserveNewest" TargetPath="data\Development.sqlite3" Condition="Exists('data\Development.sqlite3')" />
     <ContentWithTargetPath Include="data\Production.sqlite3" CopyToOutputDirectory="PreserveNewest" TargetPath="data\Production.sqlite3" Condition="Exists('data\Production.sqlite3')" />
     <ContentWithTargetPath Include="key\firebase.json" CopyToOutputDirectory="PreserveNewest" TargetPath="key\firebase.json" Condition="Exists('key\firebase.json')" />
+    <ContentWithTargetPath Include="key\web-sample-tana-firebase-adminsdk-sr9at-30eaab9047.json" CopyToOutputDirectory="PreserveNewest" TargetPath="key\web-sample-tana-firebase-adminsdk-sr9at-30eaab9047.json" Condition="Exists('key\web-sample-tana-firebase-adminsdk-sr9at-30eaab9047.json')" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

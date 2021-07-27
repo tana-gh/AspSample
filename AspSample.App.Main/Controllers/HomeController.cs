@@ -6,7 +6,7 @@ namespace AspSample.App.Main.Controllers
 {
     [ApiController]
     [Route("api/home")]
-    [Authorize("Anonymous")]
+    [Authorize]
     public class HomeController : ControllerBase
     {
         private ILogger<HomeController> Logger { get; }

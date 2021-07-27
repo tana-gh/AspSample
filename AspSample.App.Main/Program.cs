@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 
 namespace AspSample.App.Main
 {
@@ -7,6 +9,11 @@ namespace AspSample.App.Main
     {
         public static void Main(string[] args)
         {
+            FirebaseApp.Create(new AppOptions()
+            {
+                Credential = GoogleCredential.GetApplicationDefault()
+            });
+
             CreateHostBuilder(args).Build().Run();
         }
 

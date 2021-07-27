@@ -12,7 +12,8 @@ namespace AspSample.App.Main
 
         private IConfiguration Configuration { get; }
 
-        public AppDbContext(IConfiguration configuration)
+        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration)
+            : base(options)
         {
             Configuration = configuration;
         }

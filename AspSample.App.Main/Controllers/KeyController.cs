@@ -1,4 +1,3 @@
-using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -10,10 +9,10 @@ namespace AspSample.App.Main.Controllers
     [Route("api/key")]
     public class KeyController : ControllerBase
     {
-        private ILogger<HomeController> Logger { get; }
+        private ILogger<KeyController> Logger { get; }
         private IConfiguration Configuration { get; }
 
-        public KeyController(ILogger<HomeController> logger, IConfiguration configuration)
+        public KeyController(ILogger<KeyController> logger, IConfiguration configuration)
         {
             Logger = logger;
             Configuration = configuration;

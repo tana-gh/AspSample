@@ -89,7 +89,7 @@ update msg model =
         Auth idToken ->
             case idToken of
                 "" -> ({ model | idToken = Nothing }, Cmd.none)
-                _ -> ({ model | idToken = Just idToken }, Cmd.none)
+                _ -> ({ model | idToken = Just idToken }, login { model | idToken = Just idToken })
         Critical error ->
             ({ model | critical = Just error }, Cmd.none)
 
@@ -130,6 +130,29 @@ receiveHello result =
     case result of
         Ok name -> ReceiveHello name
         Err _ -> None
+
+login : Model -> Cmd Msg
+login model =
+    case model.idToken of
+        Just idToken ->
+            Jwt.Http.get idToken
+                { url = "/api/account/login"
+                , expect = Http.expectJson relogin loginResultDecoder
+                }
+        Nothing ->
+            Cmd.none
+
+loginResultDecoder : Json.Decode.Decoder String
+loginResultDecoder = Json.Decode.field "result" Json.Decode.string
+
+relogin : Result Http.Error String -> Msg
+relogin result =
+    case result of
+        Ok message ->
+            case message of
+                "Success" -> None
+                _ -> Auth ""
+        Err _ -> Auth ""
 
 subscriptions : Model -> Sub Msg
 subscriptions _ =
