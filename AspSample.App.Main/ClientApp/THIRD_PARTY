@@ -239,6 +239,9 @@ info "fsevents@1.2.13" is an optional dependency and failed compatibility check.
 │  │  ├─ URL: https://github.com/firebase/firebase-js-sdk.git
 │  │  ├─ VendorName: Firebase
 │  │  └─ VendorUrl: https://firebase.google.com/
+│  ├─ firebaseui-ja@1.0.0
+│  │  ├─ URL: https://github.com/zhlsky/firebaseui-web.git
+│  │  └─ VendorName: zhlsky
 │  ├─ firebaseui@4.8.1
 │  │  ├─ URL: https://github.com/firebase/firebaseui-web.git
 │  │  └─ VendorName: Google
