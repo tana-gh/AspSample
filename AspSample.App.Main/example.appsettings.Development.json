@@ -8,6 +8,7 @@
   },
   
   "SQLiteDataSource": "./data/Development.sqlite3",
+  "FirebaseKeyPath": "./key/firebase.json",
   "Authority": "https://securetoken.google.com/web-sample-tana",
   "Issuer": "https://securetoken.google.com/web-sample-tana",
   "Audience": "web-sample-tana",
